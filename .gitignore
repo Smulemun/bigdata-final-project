@@ -1,6 +1,7 @@
 secrets/
 *.csv
-.ipynb_checkpoints
+.ipynb_checkpoints/
 output/
 models/
 data/
+*.log
