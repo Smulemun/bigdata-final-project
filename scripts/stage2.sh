@@ -35,3 +35,4 @@ hdfs dfs -cat project/output/q6/* >> output/q6.csv
 
 
 hdfs dfs -rm -R .Trash
+

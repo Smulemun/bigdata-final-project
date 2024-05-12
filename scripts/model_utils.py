@@ -83,14 +83,14 @@ def eval_model(evaluator: RegressionEvaluator, model: Pipeline,
 
         predictions_and_labels = rounded_prediction.withColumn(
             "rating_list",
-            F.collect_list("rating").over(window_spec)) .withColumn(
+            F.collect_list("rating").over(window_spec)).withColumn(
             "prediction_list",
-            F.collect_list("rounded_prediction") .over(window_spec)) .select(
+            F.collect_list("rounded_prediction") .over(window_spec)).select(
             "user_id",
             "rating_list",
             "prediction_list")
-        predictions_and_labels_rdd = predictions_and_labels.rdd.map
-        (lambda row: (row.prediction_list, row.rating_list))
+        predictions_and_labels_rdd = predictions_and_labels.rdd.map(lambda row:\
+                                    (row.prediction_list, row.rating_list))
 
         metrics = RankingMetrics(predictions_and_labels_rdd)
         res['MAP'] = metrics.meanAveragePrecision

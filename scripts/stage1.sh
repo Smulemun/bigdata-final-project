@@ -8,7 +8,7 @@ kaggle datasets download -d mkechinov/ecommerce-behavior-data-from-multi-categor
 
 unzip bigdata-final-project/data/ecommerce-behavior-data-from-multi-category-store.zip -d data/
 
-rm bigdata-final-project/data/ecommerce-behavior-data-from-multi-category-store.zip
+rm data/ecommerce-behavior-data-from-multi-category-store.zip
 
 python3 scripts/build_db.py
 
@@ -20,3 +20,4 @@ mv *.avsc output/
 mv *.java output/
 
 hdfs dfs -rm -R .Trash
+
