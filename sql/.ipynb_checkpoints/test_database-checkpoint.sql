@@ -1,0 +1,1 @@
+SELECT * FROM ecom LIMIT 10;

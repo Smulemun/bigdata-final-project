@@ -1,0 +1,67 @@
+{
+  "type" : "record",
+  "name" : "ecom_large",
+  "doc" : "Sqoop import of ecom_large",
+  "fields" : [ {
+    "name" : "event_id",
+    "type" : [ "null", "int" ],
+    "default" : null,
+    "columnName" : "event_id",
+    "sqlType" : "4"
+  }, {
+    "name" : "event_time",
+    "type" : [ "null", "long" ],
+    "default" : null,
+    "columnName" : "event_time",
+    "sqlType" : "93"
+  }, {
+    "name" : "event_type",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "event_type",
+    "sqlType" : "12"
+  }, {
+    "name" : "product_id",
+    "type" : [ "null", "int" ],
+    "default" : null,
+    "columnName" : "product_id",
+    "sqlType" : "4"
+  }, {
+    "name" : "category_id",
+    "type" : [ "null", "long" ],
+    "default" : null,
+    "columnName" : "category_id",
+    "sqlType" : "-5"
+  }, {
+    "name" : "category_code",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "category_code",
+    "sqlType" : "12"
+  }, {
+    "name" : "brand",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "brand",
+    "sqlType" : "12"
+  }, {
+    "name" : "price",
+    "type" : [ "null", "double" ],
+    "default" : null,
+    "columnName" : "price",
+    "sqlType" : "8"
+  }, {
+    "name" : "user_id",
+    "type" : [ "null", "int" ],
+    "default" : null,
+    "columnName" : "user_id",
+    "sqlType" : "4"
+  }, {
+    "name" : "user_session",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "user_session",
+    "sqlType" : "12"
+  } ],
+  "tableName" : "ecom_large"
+}

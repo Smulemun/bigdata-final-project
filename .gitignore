@@ -1,1 +1,6 @@
 secrets/
+*.csv
+.ipynb_checkpoints
+output/
+models/
+data/

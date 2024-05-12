@@ -20,7 +20,7 @@ import os
 
 import psycopg2 as psql
 
-file = os.path.join("bigdata-final-project/secrets", ".psql.pass")
+file = os.path.join("secrets", ".psql.pass")
 DB_PASSWORD = None
 with open(file, "r", encoding="utf-8") as file:
     DB_PASSWORD = file.read().rstrip()
@@ -31,25 +31,31 @@ CONN_STRING = "host=hadoop-04.uni.innopolis.ru port=5432 user=team16"\
 with psql.connect(CONN_STRING) as conn:
     cur = conn.cursor()
     print('Creating table...')
-    with open(os.path.join("bigdata-final-project/sql", "create_table.sql"),
+    with open(os.path.join("sql", "create_table.sql"),
               encoding="utf-8") as file:
         content = file.read()
         cur.execute(content)
     conn.commit()
 
     print('Importing data...')
-    with open(os.path.join("bigdata-final-project/sql", "import_data.sql"),
+    with open(os.path.join("sql", "import_data.sql"),
               encoding="utf-8") as file:
         commands = file.readlines()
-        with open(os.path.join("bigdata-final-project/data", "2019-Oct.csv"),
+        with open(os.path.join("data", "2019-Oct.csv"),
                   "r", encoding="utf-8") as data:
             cur.copy_expert(commands[0], data)
+    conn.commit()
+
+    with open(os.path.join("sql", "import_data_small.sql"),
+              encoding="utf-8") as file:
+        content = file.read()
+        cur.execute(content)
     conn.commit()
 
     pprint(conn)
     cur = conn.cursor()
     print('Testing database...')
-    with open(os.path.join("bigdata-final-project/sql", "test_database.sql"),
+    with open(os.path.join("sql", "test_database.sql"),
               encoding="utf-8") as file:
         commands = file.readlines()
         for command in commands:

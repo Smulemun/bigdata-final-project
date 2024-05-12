@@ -1,0 +1,6 @@
+0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> DROP DATABASE IF EXISTS team16_projectdb CASCADE;
+0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> 
+0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> CREATE DATABASE team16_projectdb LOCATION "project/hive/warehouse";
+0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> USE team16_projectdb;
+0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> 
+0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> CREATE EXTERNAL TABLE ecom STORED AS AVRO LOCATION 'project/warehouse/ecom' TBLPROPERTIES ('avro.schema.url'='project/warehouse/avsc/eco m.avsc');
